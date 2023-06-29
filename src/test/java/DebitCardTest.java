@@ -69,7 +69,7 @@ class DebitCardTest {
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("button.button_theme_alfa-on-white")).click();
 
-        String expected = "Млбильный телефон указан некорректно. Допустимо только 11 цифр и символ + на первом месте, например, +71111111111.";
+        String expected = "Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.";
         String actual = driver.findElement(By.cssSelector("[data-test-id='phone'].input_invalid .input__sub")).getText().trim();
         assertEquals(expected, actual);
     }
