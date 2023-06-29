@@ -75,12 +75,12 @@ class DebitCardTest {
     }
 
     @Test
-    void shouldInputEmptyField() {
+    void shouldInputEmpty() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иванов Иван");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("button.button_theme_alfa-on-white")).click();
 
-        String expected = "Все поля должны быть заполнены";
+        String expected = "Поле обязательно для заполнения";
         String actual = driver.findElement(By.cssSelector("[data-test-id='phone'].input_invalid .input__sub")).getText().trim();
         assertEquals(expected, actual);
     }
